@@ -1,0 +1,46 @@
+{% extends "ocrapp/base.html" %}
+{% load static %}
+{% block title %}Login | Page{% endblock title %}
+{% block ext_css %}<link rel="stylesheet" href="{% static 'style.css' %}" />{% endblock ext_css %}
+{% block content %}
+
+<section class="container"> 
+
+    <div class="form login">
+        <div class="form-content">
+            <header>Login</header>
+            <form action="" method="post"> {% csrf_token %}
+                {% if form.non_field_errors %}
+            {% for error in form.non_field_errors %}
+                <p>{{error}}</p>
+            {% endfor %}
+        {% endif %}
+        
+        {% for fm in form %}
+        <div class="field input-field">
+            {{fm.label_tag}} {{fm}} {{fm.errors}} <br><br>                    
+        </div>
+        {% endfor %} <br>
+    
+                {% comment %} <div class="field input-field">
+                    <input type="password" placeholder="Password" class="password">
+                    <i class='bx bx-hide eye-icon'></i>
+                </div>
+    
+                <div class="form-link">
+                    <a href="#" class="forgot-pass">Forgot password?</a>
+                </div> {% endcomment %}
+    
+                <div class="field button-field">
+                    <button>Login</button>
+                </div>
+            </form>
+    
+            <div class="form-link">
+                <span>Don't have an account? <a href="{% url "register" %}" class="link signup-link">Signup</a></span>
+            </div>
+        </div>
+    </div>
+</section>
+
+{% endblock content %}

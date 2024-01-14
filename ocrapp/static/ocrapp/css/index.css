@@ -1,0 +1,129 @@
+/*-------------------------------- OCR CSS */
+/* {% load static%} */
+
+html{
+    scroll-behavior: smooth;
+}
+
+/* body{
+    background-color: black !important;
+} */
+
+.container{
+    width: 80% !important;
+    margin: auto;
+    padding: 20px 40px;
+}
+
+.text-HEADING-large{
+    font-size: 50px;
+    font-weight: bold;
+}
+.text-HEADING-medium{
+    font-size: 35px;
+    font-weight: bold;
+}
+.text-HEADING-small{
+    font-size: 24px;
+    font-weight: bold;
+}
+.fixed_nav{
+    height: 80px;
+    position: fixed !important;
+    background-color: #7A6AD8;
+    z-index: 1000;
+    animation: nav 0.6s linear;
+    border-bottom-left-radius: 30px;
+    border-bottom-right-radius: 30px;
+}
+@keyframes nav {
+    0%{
+        top: -80px;
+    }
+    100%{
+        top: 0px;
+    }
+}
+.fixed_nav .container{
+    padding: 12px 10px !important;
+}
+
+.banner{
+    background-image: url("/static/images/banner-bg.jpg");
+    /* background-image: url("https://images.unsplash.com/photo-1494253109108-2e30c049369b?q=80&w=1470&auto=format&fit=crop&ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D"); */
+    background-size: cover;
+    background-repeat: no-repeat;
+    background-position: bottom right;
+}
+
+.slide1{
+    background-image: url("/static/images/banner-item-01.jpg");
+    background-size: cover;
+    background-position: center;
+}
+
+.slide2{
+    background-image: url("/static/images/banner-item-02.jpg");
+    background-size: cover;
+    background-position: center;
+}
+
+.slide3{
+    background-image: url("/static/images/banner-item-03.jpg");
+    background-size: cover;
+    background-position: center;
+}
+
+.open_accordian{
+    height: 220px !important;
+}
+/* @media screen and (max-width: 1100px) {
+    .container{
+        width: 100% !important;
+    }
+} */
+
+@media screen and (max-width: 1024px) {
+    .container{
+        width: 100% !important;
+    }
+    .text-HEADING-medium{
+        font-size: 26px;
+        font-weight: bold;
+    }   
+    .text-HEADING-large{
+        font-size: 25px;
+        font-weight: bold;
+    }
+    .open_accordian{
+        height: 220px !important;
+    }
+}
+
+@media screen and (max-width: 530px) {
+    .open_accordian{
+        height: max-content !important;
+    }
+    .text-HEADING-small{
+        font-size: 18px;
+        font-weight: bold;
+    }
+}
+
+.anim_btn{
+    animation: anim_btn 15s linear infinite;
+}
+
+@keyframes anim_btn {
+    0%{
+        transform: translate(-50%, -50%) scale(1.1) rotate(0deg);
+    }
+    100%{
+        transform: translate(-50%, -50%) scale(1.1) rotate(360deg);
+    }
+}
+
+.about_main{
+    background-color: #7A6AD8;
+    
+}

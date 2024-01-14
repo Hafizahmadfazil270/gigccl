@@ -1,0 +1,222 @@
+{% comment %} <!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Image Uploader</title>
+    <style>
+        .main{
+            width: 95%;
+            margin: auto;
+            display: flex;
+            gap: 20px;
+            flex-wrap: wrap;
+            margin-top: 50px;
+        }
+        img{
+            height: 210px;
+            width: 400px;
+        }
+    </style>
+</head>
+<body>
+    <h1>Image Uploader Application</h1>
+    <h2>For Black img Button2</h2>
+    <form action="" method="post" enctype='multipart/form-data'>{% csrf_token %}
+        {{form.as_p}}
+        
+        <input type="submit" value="Upload">
+    </form>
+
+</body>
+</html> {% endcomment %}
+
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <link rel="stylesheet" href="./index.css">
+    <script src="https://cdn.tailwindcss.com"></script>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.2/css/all.min.css" integrity="sha512-z3gLpd7yknf1YoNbCzqRKc4qyor8gaKU1qmn+CShxbuBusANI9QpRohGBreCFkKxLhei6S9CQXFEbbKuqLg0DA==" crossorigin="anonymous" referrerpolicy="no-referrer" />
+    </style>
+    <style>
+        body{
+            overflow-x: hidden;
+        }
+    </style>
+</head>
+<body>
+
+
+
+    <div class="navbar z-50 duration-300 absolute w-full">
+        <div class="container py-12 flex justify-between items-center">
+            <div class="flex lg:gap-6 gap-3 items-center">
+                {% comment %} <h1 class="text-HEADING-medium text-white">SCHOLAR</h1> {% endcomment %}
+                <div class="w-[1px] md:flex hidden h-full border-l mr-2 border-gray-300">&nbsp;</div>
+                <div class="xl:flex hidden items-center relative">
+                    {% comment %} <input type="text" class="text-sm placeholder:text-gray-200 text-gray-200 outline-none h-[40px] w-[250px] rounded-full border-0 bg-[#8879DE] py-3 px-5 pr-10" placeholder="Type Something"> {% endcomment %}
+                    {% comment %} <i class="fa-solid fa-magnifying-glass text-white text-xl absolute right-4 z-10"></i> {% endcomment %}
+                </div>
+            </div>
+            <div>
+                <i class="toggler fa-solid fa-bars md:hidden block text-white text-xl z-10"></i>
+                <ul class="md:flex hidden lg:gap-5 gap-2 items-center">
+                    <li class="p-2 px-4 text-gray-200 bg-[#8879DE] rounded-full"><a href="{% url 'profile' %}">Home</a></li>
+
+                    <li class="p-2 px-4 text-gray-200 bg-[#8879DE] rounded-full"><a href="{% url 'dark_img_save' %}">Remove Dark Color</a></li>
+                    <li class="p-2 px-4 text-gray-200 bg-[#8879DE] rounded-full"><a href="show_results">show Results</a></li>
+                    {% comment %} <li class="p-2 px-4 text-gray-200 rounded-full"><a img="#services">Services</a></li>
+                    <li class="p-2 px-4 text-gray-200 rounded-full"><a href="./Upload.html">Upload</a></li>
+                    <li class="p-2 px-4 text-gray-200 rounded-full"><a href="#events">Events</a></li>
+                    <li class="p-2 px-4 text-gray-200 rounded-full"><a href="#contact">Register</a></li> {% endcomment %}
+                </ul>
+            </div>
+
+            <div class="toggle_bar duration-300 md:hidden block w-[80%] h-0 overflow-hidden absolute left-1/2 -translate-x-1/2 top-[100px] bg-gray-200 rounded-b-3xl">
+                <div class="bg-gray-200 w-full h-max border-t border-gray-300">
+                    <a class="p-2 px-5 block w-full bg-white rounded-full" href="profile">Home</a>
+                </div>
+                {% comment %} <div class="bg-gray-200 w-full h-max border-t border-gray-300">
+                    <a class="p-2 px-5 block w-full rounded-full" href="#">Services</a>
+                </div>
+                <div class="bg-gray-200 w-full h-max border-t border-gray-300">
+                    <a class="p-2 px-5 block w-full rounded-full" href="#">Cources</a>
+                </div> {% endcomment %}
+                {% comment %} <div class="bg-gray-200 w-full h-max border-t border-gray-300">
+                    <a class="p-2 px-5 block w-full rounded-full" href="#">Events</a>
+                </div> {% endcomment %}
+                {% comment %} <div class="bg-gray-200 w-full h-max border-t border-gray-300">
+                    <a class="p-2 px-5 block w-full rounded-full" href="#">Register</a>
+                </div> {% endcomment %}
+            </div>
+        </div>
+    </div>
+ 
+{% comment %} 
+    <div class="upload_parent w-full relative h-[100vh] bg-[#1E242C]">
+        <div class="w-[300px] absolute top-[50%] left-[50%] translate-x-[-50%] translate-y-[-50%] h-[300px] scale-[4] opacity-20 bg-[#8879DE] rounded-full"></div>
+        <div class="w-[300px] absolute top-[50%] left-[50%] translate-x-[-50%] translate-y-[-50%] h-[300px] scale-[3] opacity-20 bg-[#8879DE] rounded-full"></div>
+        <div class="w-[300px] absolute top-[50%] left-[50%] translate-x-[-50%] translate-y-[-50%] h-[300px] scale-[2] opacity-20 bg-[#8879DE] rounded-full"></div>
+        <div class="anim_btn w-[300px] absolute top-[50%] left-[50%] translate-x-[-50%] translate-y-[-50%] h-[300px] scale-110 border-4 border-dashed border-[#7263ca] bg-transparent rounded-full"></div>
+        <!-- ------ Input ----------  -->
+        <div class="w-[300px] absolute top-[50%] left-[50%] translate-x-[-50%] translate-y-[-50%] h-[300px] scale-[1] opacity-80 bg-[#786ac5] rounded-full">
+
+<div class="flex items-center justify-center w-full h-full rounded-full">
+    <label for="dropzone-file" class="flex flex-col rounded-full items-center justify-center w-full h-full duration-300 cursor-pointer bg-black border-gray-600 hover:border-gray-500 hover:scale-[1.02]">
+        <div class="flex flex-col items-center justify-center pt-5 pb-6">
+            <svg class="w-8 h-8 mb-4 text-gray-500 dark:text-gray-400" aria-hidden="true" xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 20 16">
+                <path stroke="currentColor" stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M13 13h3a3 3 0 0 0 0-6h-.025A5.56 5.56 0 0 0 16 6.5 5.5 5.5 0 0 0 5.207 5.021C5.137 5.017 5.071 5 5 5a4 4 0 0 0 0 8h2.167M10 15V6m0 0L8 8m2-2 2 2"/>
+            </svg>
+            <p class="mb-2 text-sm text-gray-500 dark:text-gray-400"><span class="font-semibold">Click to upload</span> or drag and drop</p>
+            <p class="text-xs text-gray-500 dark:text-gray-400">SVG, PNG, JPG or GIF (MAX. 800x400px)</p>
+        </div>
+        <input id="dropzone-file" multiple draggable="true" type="file" accept="image/*" class="hidden image-input" />
+    </label>
+</div> 
+
+        </div>
+    </div> {% endcomment %}
+
+
+
+    <div class="w-full h-max py-32 bg-[#1E242C] p-1">
+
+
+  
+
+        <div class="card w-[80%] h-max p-20 m-auto mt-[15%] bg-[#8879DE] rounded-3xl" >
+         
+            <h1 style="margin-left:300px;" class="text-2xl font-bold text-white">Simple Image Upload</h1><br>
+           
+            {% comment %} <h2>For Black img Button2</h2> {% endcomment %}
+            <form action="" style="margin-left:290px;"   method="post" enctype='multipart/form-data'>{% csrf_token %}
+                {{form.as_p}}
+                <br><br>
+                <input class="text-2xl font-bold text-white" type="submit" value="Submit">
+            </form>
+            
+            <div class="grid md:grid-cols-2 grid-cols-1">
+                {% comment %} <div class="image-preview w-full p-5">
+                    <img class="w-full" src="{{imagepath.url}}" alt="">
+                    <img src="{{x.image.url}}" alt="">
+                </div> {% endcomment %}
+               
+                {% comment %} <div class="main">
+                   
+                </div> {% endcomment %}
+               
+            </div>
+        </div>
+
+    </div>
+    
+    
+
+    <script>
+
+
+
+var bars_btn = document.querySelector('.toggler')
+var toggle_bar = document.querySelector('.toggle_bar')
+
+bars_btn.addEventListener('click', function(){
+    if(toggle_bar.classList.contains('h-0')){
+        toggle_bar.classList.remove('h-0')
+        toggle_bar.classList.add('h-[210px]')
+    }
+    else{
+        toggle_bar.classList.remove('h-[210px]')
+        toggle_bar.classList.add('h-0')
+    }
+});
+
+
+
+
+
+
+
+
+//////////////////////// Image Preview
+
+var input = document.querySelector('.image-input');
+var preview = document.querySelector('.image-preview');
+
+
+console.log(input);
+
+function handleFileSelect() {
+
+      // Ensure that a file is selected
+      if (input.files && input.files[0]) {
+        var reader = new FileReader();
+
+        // Set up the reader to load the image
+        reader.onload = function (e) {
+          preview.innerHTML = '<img class="w-full" src="' + e.target.result + '" alt="Image Preview">';
+            window.scrollTo({
+                top: document.body.scrollHeight * 2,
+                behavior: 'smooth' // Optional: Adds smooth scrolling animation
+            });
+        };
+
+        // Read the image file as a data URL
+        reader.readAsDataURL(input.files[0]);
+      } else {
+        // If no file is selected, clear the preview
+        preview.innerHTML = '';
+      }
+    }
+
+    // Attach the handleFileSelect function to the change event of the file input
+    input.addEventListener('change', handleFileSelect);
+
+
+
+    </script>
+
+</body>
+</html>

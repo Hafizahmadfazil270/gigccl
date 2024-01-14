@@ -1,0 +1,570 @@
+{% extends "ocrapp/base.html" %}
+{% load static %}
+{% block title %}Login | Page{% endblock title %}
+{% block ext_css %}<link rel="stylesheet" href="{% static "ocrapp/css/index.css" %}" />{% endblock ext_css %}
+{% block content %}
+
+<a href="#home">
+    <button class="duration-500 top-toggler w-[60px] h-[50px] bg-[#7263ca] rounded-l-xl fixed right-[-60px] flex justify-center items-center bottom-20 z-30 shadow-lg">
+        <i class="fa-solid fa-angle-up text-2xl text-white"></i>
+    </button>
+</a>
+
+
+<div class="navbar duration-300 absolute w-full">
+    <div class="container py-12 flex justify-between items-center">
+        <div class="flex lg:gap-6 gap-3 items-center">
+            <h1 class="text-HEADING-medium text-white"> OCR </h1>
+            <div class="w-[1px] md:flex hidden h-full border-l mr-2 border-gray-300">&nbsp;</div>
+            <div class="xl:flex hidden items-center relative">
+                <input type="text" class="text-sm placeholder:text-gray-200 text-gray-200 outline-none h-[40px] w-[250px] rounded-full border-0 bg-[#8879DE] py-3 px-5 pr-10" placeholder="Type Something">
+                <i class="fa-solid fa-magnifying-glass text-white text-xl absolute right-4 z-10"></i>
+            </div>
+        </div>
+        <div>
+            <i class="toggler fa-solid fa-bars md:hidden block text-white text-xl z-10"></i>
+            <ul class="md:flex hidden lg:gap-5 gap-2 items-center">
+                <li class="p-2 px-4 text-gray-200 bg-[#8879DE] rounded-full"><a href="#home">Home</a></li>
+                <li class="p-2 px-4 text-gray-200 hover:bg-[#8879DE] rounded-full"><a href="#services">Services</a></li>
+                <li class="p-2 px-4 text-gray-200 hover:bg-[#8879DE] rounded-full"><a href="{% url "home" %}">Upload</a></li>
+                <li class="p-2 px-4 text-gray-200 hover:bg-[#8879DE] rounded-full"><a href="">About</a></li>
+                <li class="p-2 px-4 text-gray-200 hover:bg-[#8879DE] rounded-full"><a href="{% url "logout" %}">Logout</a></li>
+            </ul>
+        </div>
+
+        <div class="toggle_bar duration-300 md:hidden block w-[80%] h-0 overflow-hidden absolute left-1/2 -translate-x-1/2 top-[100px] bg-gray-200 rounded-b-3xl">
+            <div class="bg-gray-200 w-full h-max border-t border-gray-300">
+                <a class="p-2 px-5 block w-full bg-white rounded-full" href="#">Home</a>
+            </div>
+            <div class="bg-gray-200 w-full h-max border-t border-gray-300">
+                <a class="p-2 px-5 block w-full rounded-full" href="#services">Services</a>
+            </div>
+            <div class="bg-gray-200 w-full h-max border-t border-gray-300">
+                <a class="p-2 px-5 block w-full rounded-full" href="">Upload</a>
+            </div>
+            <div class="bg-gray-200 w-full h-max border-t border-gray-300">
+                <a class="p-2 px-5 block w-full rounded-full" href="">About</a>
+            </div>
+            <div class="bg-gray-200 w-full h-max border-t border-gray-300">
+                {% comment %} <a class="p-2 px-5 block w-full rounded-full" href="./Login & Signup Form/index.html">Register</a> {% endcomment %}
+            </div>
+        </div>
+    </div>
+</div>
+
+<div id="home" class="banner pt-36 pb-16">
+    <div class="container lg:p-[20px] p-[10px] lg:flex-row flex-col flex justify-between lg:items-end items-center">
+        <div class="lg:block flex lg:order-1 order-2">
+            <button class="prev  p-3 w-[50px] h-[50px] m-3 rounded-full bg-[#9588E1] flex justify-center items-center text-lg text-white"><i class="fa-solid fa-angle-left"></i></button>
+            <button class="next p-3 w-[50px] h-[50px] m-3 rounded-full bg-[#9588E1] flex justify-center items-center text-lg text-white"><i class="fa-solid fa-angle-right"></i></button>
+        </div>
+        <div class="p-5 lg:order-1 order-1 w-full">
+            <div class="w-full overflow-hidden slider_parent">
+                <div class="slider duration-300 w-[300%] flex">
+                    <div class="w-[33.33%] md:mx-4 rounded-xl lg:p-24 sm:p-10 p-5 slide slide1">
+                        <div class="lg:w-[60%]">
+                            <div class="py-1 mb-5 mt-10 px-4 bg-[#7A6AD8] text-white text-sm rounded-full w-max">Our Optical Character Recognition</div>
+                            <h1 class="text-HEADING-large text-white mb-5">With OCR Everyone, Everything Is Easier</h1>
+                            <p class="text-md text-white">OCR is free CSS template designed by TemplateMo for online educational related websites. This layout is based on the famous Bootstrap v5.3.0 framework.</p>
+                            <div class="flex sm:flex-row flex-col justify-between w-max gap-3 mt-8 sm:items-center">
+                               <a href="https://youtu.be/or8AcS6y1xg?si=Czz0SGRLqjOxbLtx">
+                                   <button class="py-3 px-5 bg-white text-[#7A6AD8] hover:text-[#fff] hover:bg-[#7A6AD8] text-md rounded-full w-max">Request Demo</button>
+                               </a>
+                               <a href="https://youtu.be/or8AcS6y1xg?si=Czz0SGRLqjOxbLtx">
+
+                                   <div class="cursor-pointer flex items-center gap-3 text-white text-md rounded-full w-max">
+                                       <button class="py-3 px-5 bg-white text-[#7A6AD8] text-md rounded-full w-max"><i class="fa-solid fa-play"></i></button>
+                                       How works OCR?
+                                   </div>
+                               </a>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="w-[33.33%] md:mx-4 rounded-xl lg:p-24 sm:p-10 p-5 slide slide2">
+                        <div class="lg:w-[60%]">
+                            <div class="py-1 mb-5 mt-10 px-4 bg-[#7A6AD8] text-white text-sm rounded-full w-max">Our Optical Character Recognition</div>
+                            <h1 class="text-HEADING-large text-white mb-5">With OCR Teachers, Everything Is Easier</h1>
+                            <p class="text-md text-white">Scholar is free CSS template designed by TemplateMo for online educational related websites. This layout is based on the famous Bootstrap v5.3.0 framework.</p>
+                            <div class="flex sm:flex-row flex-col justify-between w-max gap-3 mt-8 sm:items-center">
+                                <a href="https://youtu.be/or8AcS6y1xg?si=Czz0SGRLqjOxbLtx">
+                                    <button class="py-3 px-5 bg-white text-[#7A6AD8] hover:text-[#fff] hover:bg-[#7A6AD8] text-md rounded-full w-max">Request Demo</button>
+                                </a>
+                                <a href="https://youtu.be/or8AcS6y1xg?si=Czz0SGRLqjOxbLtx">
+
+                                    <div class="cursor-pointer flex items-center gap-3 text-white text-md rounded-full w-max">
+                                        <button class="py-3 px-5 bg-white text-[#7A6AD8] text-md rounded-full w-max"><i class="fa-solid fa-play"></i></button>
+                                        How works OCR?
+                                    </div>
+                                </a>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="w-[33.33%] md:mx-4 rounded-xl lg:p-24 sm:p-10 p-5 slide slide3">
+                        <div class="lg:w-[60%]">
+                            <div class="py-1 mb-5 mt-10 px-4 bg-[#7A6AD8] text-white text-sm rounded-full w-max">Our Optical Character Recognition</div>
+                            <h1 class="text-HEADING-large text-white mb-5">With OCR Students, Everything Is Easier</h1>
+                            <p class="text-md text-white">Scholar is free CSS template designed by TemplateMo for online educational related websites. This layout is based on the famous Bootstrap v5.3.0 framework.</p>
+                            <div class="flex sm:flex-row flex-col justify-between w-max gap-3 mt-8 sm:items-center">
+                                <a href="https://youtu.be/or8AcS6y1xg?si=Czz0SGRLqjOxbLtx">
+                                    <button class="py-3 px-5 bg-white text-[#7A6AD8] hover:text-[#fff] hover:bg-[#7A6AD8] text-md rounded-full w-max">Request Demo</button>
+                                </a>
+                                <a href="https://youtu.be/or8AcS6y1xg?si=Czz0SGRLqjOxbLtx">
+
+                                    <div class="cursor-pointer flex items-center gap-3 text-white text-md rounded-full w-max">
+                                        <button class="py-3 px-5 bg-white text-[#7A6AD8] text-md rounded-full w-max"><i class="fa-solid fa-play"></i></button>
+                                        How works OCR?
+                                    </div>
+                                </a>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+</div>
+
+<div id="services" class="w-full py-40">
+    <div class="container">
+        <div class="grid lg:grid-cols-3 sm:grid-cols-2 xl:gap-5 lg:gap-y-5 gap-y-20  grid-cols-1">
+            <div class="group">
+                <div class="md:w-[80%] w-[90%] card p-8 pb-12 rounded-3xl relative bg-[#F1F0FE]">
+                    <div class="xl:w-[200px] xl:h-[200px] w-[130px] h-[130px] absolute top-[0%] right-[0%] translate-x-[35%] translate-y-[-50%] rounded-full bg-[#7A6AD8] flex justify-center items-center">
+                        <img class="group-hover:-translate-y-1 duration-300"  src=" {% static "images/service-01.png" %} " alt="">
+                    </div>
+                    <h1 class="text-HEADING-small mt-14">Use OCR Online</h1>
+                    <p class="mt-3 text-gray-700">to extract text and characters from scanned PDF documents (including multipage files), photos and digital camera captured images.</p>
+                   <a href="./about.html">
+                       <button class="py-2 px-4 bg-white text-[#7A6AD8] hover:bg-[#7A6AD8] hover:text-white duration-300 text-sm font-bold mt-5 rounded-full w-max">Read More</button>
+                   </a>
+                </div>
+            </div>
+            <div class="group">
+                <div class="md:w-[80%] w-[90%] card p-8 pb-12 rounded-3xl relative bg-[#F1F0FE]">
+                    <div class="xl:w-[200px] xl:h-[200px] w-[130px] h-[130px] absolute top-[0%] right-[0%] translate-x-[35%] translate-y-[-50%] rounded-full bg-[#7A6AD8] flex justify-center items-center">
+                        <img class="group-hover:-translate-y-1 duration-300"  src=" {% static "images/service-02.png" %}" alt="">
+                    </div>
+                    <h1 class="text-HEADING-small mt-14">Image to Text</h1>
+                    <p class="mt-3 text-gray-700">Any JPG, BMP or PNG images can be converted into text output formats with the same layout as original file</p>
+                    <a href="./about.html">
+                        <button class="py-2 px-4 bg-white text-[#7A6AD8] hover:bg-[#7A6AD8] hover:text-white duration-300 text-sm font-bold mt-5 rounded-full w-max">Read More</button>
+                    </a>
+                </div>
+            </div>
+            <div class="group">
+                <div class="md:w-[80%] w-[90%] card p-8 pb-12 rounded-3xl relative bg-[#F1F0FE]">
+                    <div class="xl:w-[200px] xl:h-[200px] w-[130px] h-[130px] absolute top-[0%] right-[0%] translate-x-[35%] translate-y-[-50%] rounded-full bg-[#7A6AD8] flex justify-center items-center">
+                        <img class="group-hover:-translate-y-1 duration-300"  src="{% static "images/service-03.png" %}" alt="">
+                    </div>
+                    <h1 class="text-HEADING-small mt-14">Secure Conversion</h1>
+                    <p class="mt-3 text-gray-700">All documents uploaded under the free "Guest" account will be deleted automatically after conversion.</p>
+                    <a href="./about.html">
+                        <button class="py-2 px-4 bg-white text-[#7A6AD8] hover:bg-[#7A6AD8] hover:text-white duration-300 text-sm font-bold mt-5 rounded-full w-max">Read More</button>
+                    </a>
+                </div>
+            </div>
+        </div>
+    </div>
+</div>
+
+<div id="courses" class="w-full relative">
+
+    <div class="absolute lg:block hidden h-[450px] rounded-l-full bg-[#F1F0FE] rounded-x-3xl w-[85%] right-0 top-[50%] translate-y-[-50%]">
+        &nbsp;
+    </div>
+
+    <div class="container flex justify-end relative">
+        <div class="xl:w-[90%]">
+            <div class="grid lg:grid-cols-2 gap-5 grid-cols-1">
+                <div class="group">
+                    <div class="w-full md:p-10 p-5 bg-[#7A6AD8] rounded-3xl">
+                        <div class="accordian">
+                            <div class="accordian_item duration-300 h-[60px] overflow-hidden bg-white rounded-3xl my-8">
+                                <div class="head h-[60px] cursor-pointer bg-white flex justify-between items-center px-6 py-4 rounded-full">
+                                    <p class="font-bold text-md">Where shall we begin?</p>
+                                    <button class="w-[30px] h-[30px] border-0 bg-[#7A6AD8] rounded-full flex justify-center items-center ">
+                                        <i class="fa-solid fa-plus text-white"></i>
+                                    </button>
+                                </div>
+                                <div class="body p-5">Lorem ipsum dolor sit amet consectetur adipisicing elit. Distinctio, enim consequatur. Consectetur nam, esse accusamus nemo, aut iure ratione quae non aliquam eius consequatur distinctio molestias adipisci laudantium dolore. Quae.</div>
+                            </div>
+
+                            <div class="accordian_item duration-300 h-[60px] overflow-hidden bg-white rounded-3xl my-8">
+                                <div class="head h-[60px] cursor-pointer bg-white flex justify-between items-center px-6 py-4 rounded-full">
+                                    <p class="font-bold text-md">How do we work together?</p>
+                                    <button class="w-[30px] h-[30px] border-0 bg-[#7A6AD8] rounded-full flex justify-center items-center ">
+                                        <i class="fa-solid fa-plus text-white"></i>
+                                    </button>
+                                </div>
+                                <div class="body  p-5">Lorem ipsum dolor sit amet consectetur adipisicing elit. Distinctio, enim consequatur. Consectetur nam, esse accusamus nemo, aut iure ratione quae non aliquam eius consequatur distinctio molestias adipisci laudantium dolore. Quae.</div>
+                            </div>
+
+                            <div class="accordian_item duration-300 h-[60px] overflow-hidden bg-white rounded-3xl my-8">
+                                <div class="head h-[60px] cursor-pointer bg-white flex justify-between items-center px-6 py-4 rounded-full">
+                                    <p class="font-bold text-md">Why SCHOLAR is the best?</p>
+                                    <button class="w-[30px] h-[30px] border-0 bg-[#7A6AD8] rounded-full flex justify-center items-center ">
+                                        <i class="fa-solid fa-plus text-white"></i>
+                                    </button>
+                                </div>
+                                <div class="body  p-5">Lorem ipsum dolor sit amet consectetur adipisicing elit. Distinctio, enim consequatur. Consectetur nam, esse accusamus nemo, aut iure ratione quae non aliquam eius consequatur distinctio molestias adipisci laudantium dolore. Quae.</div>
+                            </div>
+
+                            <div class="accordian_item duration-300 h-[60px] overflow-hidden bg-white rounded-3xl my-8">
+                                <div class="head h-[60px] cursor-pointer bg-white flex justify-between items-center px-6 py-4 rounded-full">
+                                    <p class="font-bold text-md">Do we get the best support?</p>
+                                    <button class="w-[30px] h-[30px] border-0 bg-[#7A6AD8] rounded-full flex justify-center items-center ">
+                                        <i class="fa-solid fa-plus text-white"></i>
+                                    </button>
+                                </div>
+                                <div class="body  p-5">Lorem ipsum dolor sit amet consectetur adipisicing elit. Distinctio, enim consequatur. Consectetur nam, esse accusamus nemo, aut iure ratione quae non aliquam eius consequatur distinctio molestias adipisci laudantium dolore. Quae.</div>
+                            </div>
+
+                        </div>
+                    </div>
+                </div>
+                <div class="group flex items-center">
+                    <div class="md:pl-10">
+                        <div class="py-1 font-bold xl:mb-5 mb-2 xl:mt-10 bg-transparent text-[#7A6AD8] text-sm rounded-full w-max">ABOUT US</div>
+                            <h1 class="text-HEADING-medium xl:mb-5 mb-2">What's Make Us The Best OCR ?</h1>
+                            <p class="text-md text-gray-700">Sure, advanced OCR does a lot more than just recognizing text!, keep the layout of documents intact, and even pull out specific info like dates or names. It’s like a smart tool that cleans up pictures before reading them, and it's always learning to get better at recognizing things. Plus, it's super careful with sensitive info, making sure it stays private and follows all the rules about keeping data safe.</p>
+                            <div class="flex justify-between w-max gap-3 xl:mt-14 mt-2 items-center">
+                               <a href="./about.html">
+                                   
+                                   <button class="py-3 px-5 bg-[#7A6AD8] lg:bg-white text-white lg:text-[#7A6AD8] hover:bg-[#7263ca] hover:text-white text-md rounded-full w-max">Discover More</button>
+                               </a>
+                            </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+</div>
+
+<div class="w-full lg:my-60 my-40 relative">
+
+    <div class="absolute sm:h-[340px] h-[450px] rounded-r-full bg-[#7A6AD8] rounded-x-3xl w-[95%] left-0 top-[50%] translate-y-[-50%]">
+        &nbsp;
+    </div>
+
+    <div class="container flex justify-end relative">
+            <div class="w-full grid lg:grid-cols-4 sm:grid-cols-2 gap-5 grid-cols-1">
+                <div class="flex justify-center items-center flex-col">
+                    <h1 class="text-HEADING-large text-white">150 +</h1>
+                    <p class="text-white text-md">Happy Students</p>
+                </div>
+                <div class="flex justify-center items-center flex-col">
+                    <h1 class="text-HEADING-large text-white">804 +</h1>
+                    <p class="text-white text-md">Course Hours</p>
+                </div>
+                <div class="flex justify-center items-center flex-col">
+                    <h1 class="text-HEADING-large text-white">50 +</h1>
+                    <p class="text-white text-md">Employed Students</p>
+                </div>
+                <div class="flex justify-center items-center flex-col">
+                    <h1 class="text-HEADING-large text-white">15 +</h1>
+                    <p class="text-white text-md">Years Experience</p>
+                </div>
+            </div>
+    </div>
+</div>
+
+
+<div class="w-full py-32">
+    <div class="m-auto p-10 xl:w-[80%] w-[100%]">
+        <div class="grid lg:grid-cols-4 sm:grid-cols-2 gap-5 lg:gap-y-5 gap-y-32 grid-cols-1">
+            <div class="group">
+                <div class="md:w-[100%] flex justify-center items-center flex-col card p-8 pb-12 rounded-3xl relative bg-[#F1F0FE]">
+                    <div class="w-[200px] h-[200px] absolute top-[0%] left-[50%] translate-x-[-50%] translate-y-[-50%] rounded-full flex justify-center items-center group-hover:-mt-3 duration-300">
+                        <img class="w-full rounded-full h-full duration-300"  src="{% static "images/member-01.jpg" %}" alt="">
+                    </div>
+                    <p class="text-md text-[#7A6AD8] mt-24">UX Teacher</p>
+                    <h1 class="text-HEADING-small">Sophia Rose</h1>
+                    <div class="flex gap-3">
+                        <button class="flex justify-center items-center w-[40px] h-[40px] bg-white text-[#7A6AD8] hover:bg-[#7A6AD8] hover:text-white duration-300 text-lg font-bold mt-5 rounded-full "><i class="fa-brands fa-facebook-f"></i></button>
+                        <button class="flex justify-center items-center w-[40px] h-[40px] bg-white text-[#7A6AD8] hover:bg-[#7A6AD8] hover:text-white duration-300 text-lg font-bold mt-5 rounded-full "><i class="fa-brands fa-twitter"></i></button>
+                        <button class="flex justify-center items-center w-[40px] h-[40px] bg-white text-[#7A6AD8] hover:bg-[#7A6AD8] hover:text-white duration-300 text-lg font-bold mt-5 rounded-full "><i class="fa-brands fa-linkedin"></i></button>
+                    </div>
+                </div>
+            </div>
+            <div class="group">
+                <div class="md:w-[100%] flex justify-center items-center flex-col card p-8 pb-12 rounded-3xl relative bg-[#F1F0FE]">
+                    <div class="w-[200px] h-[200px] absolute top-[0%] left-[50%] translate-x-[-50%] translate-y-[-50%] rounded-full flex justify-center items-center group-hover:-mt-3 duration-300">
+                        <img class="w-full rounded-full h-full duration-300"  src="{% static "images/member-02.jpg" %}" alt="">
+                    </div>
+                    <p class="text-md text-[#7A6AD8] mt-24">Graphic Teacher</p>
+                    <h1 class="text-HEADING-small">Cindy Walker</h1>
+                    <div class="flex gap-3">
+                        <button class="flex justify-center items-center w-[40px] h-[40px] bg-white text-[#7A6AD8] hover:bg-[#7A6AD8] hover:text-white duration-300 text-lg font-bold mt-5 rounded-full "><i class="fa-brands fa-facebook-f"></i></button>
+                        <button class="flex justify-center items-center w-[40px] h-[40px] bg-white text-[#7A6AD8] hover:bg-[#7A6AD8] hover:text-white duration-300 text-lg font-bold mt-5 rounded-full "><i class="fa-brands fa-twitter"></i></button>
+                        <button class="flex justify-center items-center w-[40px] h-[40px] bg-white text-[#7A6AD8] hover:bg-[#7A6AD8] hover:text-white duration-300 text-lg font-bold mt-5 rounded-full "><i class="fa-brands fa-linkedin"></i></button>
+                    </div>
+                </div>
+            </div>
+            <div class="group">
+                <div class="md:w-[100%] flex justify-center items-center flex-col card p-8 pb-12 rounded-3xl relative bg-[#F1F0FE]">
+                    <div class="w-[200px] h-[200px] absolute top-[0%] left-[50%] translate-x-[-50%] translate-y-[-50%] rounded-full flex justify-center items-center group-hover:-mt-3 duration-300">
+                        <img class="w-full rounded-full h-full duration-300"  src="{% static "images/member-03.jpg" %}" alt="">
+                    </div>
+                    <p class="text-md text-[#7A6AD8] mt-24">Full Stack Master</p>
+                    <h1 class="text-HEADING-small">David Hutson</h1>
+                    <div class="flex gap-3">
+                        <button class="flex justify-center items-center w-[40px] h-[40px] bg-white text-[#7A6AD8] hover:bg-[#7A6AD8] hover:text-white duration-300 text-lg font-bold mt-5 rounded-full "><i class="fa-brands fa-facebook-f"></i></button>
+                        <button class="flex justify-center items-center w-[40px] h-[40px] bg-white text-[#7A6AD8] hover:bg-[#7A6AD8] hover:text-white duration-300 text-lg font-bold mt-5 rounded-full "><i class="fa-brands fa-twitter"></i></button>
+                        <button class="flex justify-center items-center w-[40px] h-[40px] bg-white text-[#7A6AD8] hover:bg-[#7A6AD8] hover:text-white duration-300 text-lg font-bold mt-5 rounded-full "><i class="fa-brands fa-linkedin"></i></button>
+                    </div>
+                </div>
+            </div>
+            <div class="group">
+                <div class="md:w-[100%] flex justify-center items-center flex-col card p-8 pb-12 rounded-3xl relative bg-[#F1F0FE]">
+                    <div class="w-[200px] h-[200px] absolute top-[0%] left-[50%] translate-x-[-50%] translate-y-[-50%] rounded-full flex justify-center items-center group-hover:-mt-3 duration-300">
+                        <img class="w-full rounded-full h-full duration-300"  src="{% static "images/member-04.jpg" %}" alt="">
+                    </div>
+                    <p class="text-md text-[#7A6AD8] mt-24">Digital Animator</p>
+                    <h1 class="text-HEADING-small">Stella Blair</h1>
+                    <div class="flex gap-3">
+                        <button class="flex justify-center items-center w-[40px] h-[40px] bg-white text-[#7A6AD8] hover:bg-[#7A6AD8] hover:text-white duration-300 text-lg font-bold mt-5 rounded-full "><i class="fa-brands fa-facebook-f"></i></button>
+                        <button class="flex justify-center items-center w-[40px] h-[40px] bg-white text-[#7A6AD8] hover:bg-[#7A6AD8] hover:text-white duration-300 text-lg font-bold mt-5 rounded-full "><i class="fa-brands fa-twitter"></i></button>
+                        <button class="flex justify-center items-center w-[40px] h-[40px] bg-white text-[#7A6AD8] hover:bg-[#7A6AD8] hover:text-white duration-300 text-lg font-bold mt-5 rounded-full "><i class="fa-brands fa-linkedin"></i></button>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+</div>
+
+
+
+<div class="w-full mt-20 relative">
+
+    <div class="absolute lg:block hidden h-[550px] rounded-l-full bg-[#F1F0FE] rounded-x-3xl w-[65%] right-0 top-[50%] translate-y-[-50%]">
+        &nbsp;
+    </div>
+
+    <div class="container sm:p-10 p-0 flex justify-end relative">
+        <div class="w-[100%]">
+            <div class="grid lg:grid-cols-5 gap-5 grid-cols-1">
+                <div class="group lg:col-span-3 relative flex items-center">
+                    <div class="flex w-full justify-between items-end">
+                        <div class="absolute right-0 top-1/2 -translate-y-1/2">
+                            <button class="test-prev p-3 w-[50px] h-[50px] m-3 rounded-full bg-white text-[#7A6AD8] flex justify-center items-center text-lg shadow-md"><i class="fa-solid fa-angle-left"></i></button>
+                            <button class="test-next p-3 w-[50px] h-[50px] m-3 rounded-full bg-white text-[#7A6AD8] flex justify-center items-center text-lg shadow-md"><i class="fa-solid fa-angle-right"></i></button>
+                        </div>
+                        <div class="p-5 w-full">
+                            <div class="w-full overflow-hidden test_slider_parent">
+                                <div class="test_slider duration-300 w-[300%] flex">
+                                    <div class="w-[33.33%] mx-4 rounded-3xl md:p-20 p-6 test-slide test-slide1 bg-[#7A6AD8]">
+                                        <p class="text-lg italic text-gray-200">Lorem ipsum dolor sit amet consectetur adipisicing elit. Ea tempora, ad deserunt error officia esse laudantium, pariatur repudiandae voluptatem animi aliquam omnis nobis maiores vel ut exercitationem facere! Autem, earum?</p>
+                                        <figcaption class="flex justify-start mt-10 items-center space-x-3">
+                                        <img class="w-28 h-28 rounded-full" src="https://flowbite.s3.amazonaws.com/blocks/marketing-ui/avatars/karen-nelson.png" alt="profile picture">
+                                        <div class="space-y-0.5 dark:text-white text-left">
+                                            <div class="text-lg">Developer</div>
+                                            <div class="text-2xl font-bold text-white">Bonnie Green</div>
+                                        </div>
+                                    </figcaption>
+                                    </div>
+                                    <div class="w-[33.33%] mx-4 rounded-3xl md:p-20 p-6 test-slide test-slide1 bg-[#7A6AD8]">
+                                        <p class="text-lg italic text-gray-200">Lorem ipsum dolor sit amet consectetur adipisicing elit. Ea tempora, ad deserunt error officia esse laudantium, pariatur repudiandae voluptatem animi aliquam omnis nobis maiores vel ut exercitationem facere! Autem, earum?</p>
+                                        <figcaption class="flex justify-start mt-10 items-center space-x-3">
+                                        <img class="w-28 h-28 rounded-full" src="https://flowbite.s3.amazonaws.com/blocks/marketing-ui/avatars/karen-nelson.png" alt="profile picture">
+                                        <div class="space-y-0.5 dark:text-white text-left">
+                                            <div class="text-lg">Developer</div>
+                                            <div class="text-2xl font-bold text-white">Bonnie Green</div>
+                                        </div>
+                                    </figcaption>
+                                    </div>
+                                    <div class="w-[33.33%] mx-4 rounded-3xl md:p-20 p-6 test-slide test-slide1 bg-[#7A6AD8]">
+                                        <p class="text-lg italic text-gray-200">Lorem ipsum dolor sit amet consectetur adipisicing elit. Ea tempora, ad deserunt error officia esse laudantium, pariatur repudiandae voluptatem animi aliquam omnis nobis maiores vel ut exercitationem facere! Autem, earum?</p>
+                                        <figcaption class="flex justify-start mt-10 items-center space-x-3">
+                                        <img class="w-28 h-28 rounded-full" src="https://flowbite.s3.amazonaws.com/blocks/marketing-ui/avatars/karen-nelson.png" alt="profile picture">
+                                        <div class="space-y-0.5 dark:text-white text-left">
+                                            <div class="text-lg">Developer</div>
+                                            <div class="text-2xl font-bold text-white">Bonnie Green</div>
+                                        </div>
+                                    </figcaption>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+                <div class="group lg:col-span-2 flex items-center">
+                    <div class="pl-10">
+                        <div class="py-1 font-bold mb-5 mt-10 bg-transparent text-[#7A6AD8] text-sm rounded-full w-max">TESTIMONIALS</div>
+                            <h1 class="text-HEADING-medium mb-10">What They Say About Us?</h1>
+                            <p class="text-md text-gray-700">You can search free CSS templates on Google using different keywords such as templatemo portfolio, templatemo gallery, templatemo blue color, etc.</p>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+</div>
+
+
+<div id="events" class="w-full mt-32 relative">
+
+   <div class="container">
+        <div class="m-auto text-center">
+            <p class="text-sm text-[#7A6AD8] mb-2">SCHEDULE</p>
+            <h1 class="text-HEADING-medium">Upcoming Events</h1>
+        </div>
+
+        <div class="mt-20 bg-[#F1F0FE] xl:px-20 lg:px-8 px-10 lg:py-0 py-10 relative flex rounded-3xl justify-between lg:flex-row flex-col">
+
+            <div class="xl:w-[150px] xl:h-[150px] w-[100px] lg:mb-0 mb-10 lg:ml-0 sm:ml-10 h-[100px] bg-red-200">
+                <img class="w-full h-full rounded-3xl scale-150" src="{% static "images/event-01.jpg" %}" alt="">
+            </div>
+
+            <div class="lg:w-[80%] w-full flex items-center">
+                <div class="w-full grid lg:grid-cols-6 grid-cols-1">
+                    <div class="col-span-2">
+                        <button class="py-2 px-4 bg-white text-[#7A6AD8] text-md rounded-full w-max">WEB DESIGN</button>
+                        <h1 class="text-HEADING-small">UI Best Practices</h1>
+                    </div>
+                    <div class="col-span-2">
+                        <p class="mb-2">Date:</p>
+                        <h1 class="font-bold text-[#7A6AD8]">16 Feb 2036</h1>
+                    </div>
+                    <div>
+                        <p class="mb-2">Duration:</p>
+                        <h1 class="font-bold text-[#7A6AD8]">22 Hours</h1>
+                    </div>
+                    <div>
+                        <p class="mb-2">Price:</p>
+                        <h1 class="font-bold text-[#7A6AD8]">$120</h1>
+                    </div>
+                </div>
+            </div>
+
+            <div class="cursor-pointer w-[60px] h-[120px] bg-[#7A6AD8] rounded-l-full absolute right-0 top-1/2 -translate-y-1/2 flex justify-center items-center">
+                <i class="fa-solid fa-angle-right text-white text-lg"></i>
+            </div>
+
+        </div>
+
+        <div class="mt-32 bg-[#F1F0FE] xl:px-20 lg:px-8 px-10 lg:py-0 py-10 relative flex rounded-3xl justify-between lg:flex-row flex-col">
+
+            <div class="xl:w-[150px] xl:h-[150px] w-[100px] lg:mb-0 mb-10 lg:ml-0 sm:ml-10 h-[100px] bg-red-200">
+                <img class="w-full h-full rounded-3xl scale-150" src="{% static "images/event-02.jpg" %}" alt="">
+            </div>
+
+            <div class="lg:w-[80%] w-full flex items-center">
+                <div class="w-full grid lg:grid-cols-6 grid-cols-1">
+                    <div class="col-span-2">
+                        <button class="py-2 px-4 bg-white text-[#7A6AD8] text-md rounded-full w-max">WEB DESIGN</button>
+                        <h1 class="text-HEADING-small">UI Best Practices</h1>
+                    </div>
+                    <div class="col-span-2">
+                        <p class="mb-2">Date:</p>
+                        <h1 class="font-bold text-[#7A6AD8]">16 Feb 2036</h1>
+                    </div>
+                    <div>
+                        <p class="mb-2">Duration:</p>
+                        <h1 class="font-bold text-[#7A6AD8]">22 Hours</h1>
+                    </div>
+                    <div>
+                        <p class="mb-2">Price:</p>
+                        <h1 class="font-bold text-[#7A6AD8]">$120</h1>
+                    </div>
+                </div>
+            </div>
+
+            <div class="cursor-pointer w-[60px] h-[120px] bg-[#7A6AD8] rounded-l-full absolute right-0 top-1/2 -translate-y-1/2 flex justify-center items-center">
+                <i class="fa-solid fa-angle-right text-white text-lg"></i>
+            </div>
+
+        </div>
+
+        <div class="mt-32 bg-[#F1F0FE] xl:px-20 lg:px-8 px-10 lg:py-0 py-10 relative flex rounded-3xl justify-between lg:flex-row flex-col">
+
+            <div class="xl:w-[150px] xl:h-[150px] w-[100px] lg:mb-0 mb-10 lg:ml-0 sm:ml-10 h-[100px] bg-red-200">
+                <img class="w-full h-full rounded-3xl scale-150" src="{% static "images/event-03.jpg" %}" alt="">
+            </div>
+
+            <div class="lg:w-[80%] w-full flex items-center">
+                <div class="w-full grid lg:grid-cols-6 grid-cols-1">
+                    <div class="col-span-2">
+                        <button class="py-2 px-4 bg-white text-[#7A6AD8] text-md rounded-full w-max">WEB DESIGN</button>
+                        <h1 class="text-HEADING-small">UI Best Practices</h1>
+                    </div>
+                    <div class="col-span-2">
+                        <p class="mb-2">Date:</p>
+                        <h1 class="font-bold text-[#7A6AD8]">16 Feb 2036</h1>
+                    </div>
+                    <div>
+                        <p class="mb-2">Duration:</p>
+                        <h1 class="font-bold text-[#7A6AD8]">22 Hours</h1>
+                    </div>
+                    <div>
+                        <p class="mb-2">Price:</p>
+                        <h1 class="font-bold text-[#7A6AD8]">$120</h1>
+                    </div>
+                </div>
+            </div>
+
+            <div class="cursor-pointer w-[60px] h-[120px] bg-[#7A6AD8] rounded-l-full absolute right-0 top-1/2 -translate-y-1/2 flex justify-center items-center">
+                <i class="fa-solid fa-angle-right text-white text-lg"></i>
+            </div>
+
+        </div>
+
+   </div>
+  
+</div>
+
+
+
+<div id="contact" class="w-full mt-40 relative">
+
+    <div class="absolute lg:block hidden h-[550px] rounded-r-full bg-[#F1F0FE] w-[65%] left-0 top-[50%] translate-y-[-50%]">
+        &nbsp;
+    </div>
+
+    <div class="xl:w-[80%] w-[100%] m-auto flex justify-end relative">
+        <div class="w-[100%]">
+            <div class="grid lg:grid-cols-5 gap-5 grid-cols-1">
+                <div class="group col-span-2 flex items-center">
+                    <div class="pl-10">
+                        <div class="py-1 font-bold mb-5 mt-10 bg-transparent text-[#7A6AD8] text-sm rounded-full w-max">CONTACT US</div>
+                            <h1 class="text-HEADING-medium mb-10">Feel Free To Contact Us Anytime</h1>
+                            <p class="text-md text-gray-700">Thank you for choosing our templates. We provide you best CSS templates at absolutely 100% free of charge. You may support us by sharing our website to your friends.</p>
+
+                            <div class="lg:bg-white bg-[#F1F0FE] mt-10 h-[120px] overflow-hidden px-24 relative flex rounded-3xl justify-between">
+                                
+                
+                                        <div class="flex flex-col justify-center">
+                                            <p class="text-md">VALIDE: <span class="text-[#7A6AD8]">24 APRIL 2036</span></p>
+                                            <h1 class="text-HEADING-small">Special Offer <span class="text-[#7A6AD8]">50%</span> OFF!</h1>
+                                        </div>
+                                        
+                                <div class="cursor-pointer w-[75px] h-[120px] bg-[#7A6AD8] rounded-r-full absolute left-0 top-1/2 p-2 -translate-y-1/2 flex flex-col justify-center items-start">
+                                    <span class="text-gray-200">OFF</span> 
+                                    <span class="text-white text-2xl">50%</span> 
+                                </div>
+
+                                <div class="cursor-pointer w-[40px] h-[40px] bg-[#7A6AD8] rounded-full absolute right-10 top-1/2 -translate-y-1/2 flex justify-center items-center text-white">
+                                    <i class="fa-solid fa-angle-right"></i>
+                                </div>
+                
+                            </div>
+                    </div>
+                </div>
+                <div class="group col-span-3 relative flex items-center">
+                    <div class="mx-4 w-full rounded-3xl md:p-20 p-5 bg-[#7A6AD8]">
+                        <input type="text" class="text-md placeholder:text-gray-200 text-gray-200 outline-none w-full rounded-full border-0 bg-[#8879DE] py-4 px-6" placeholder="Your Name...">
+                        <input type="text" class="text-md placeholder:text-gray-200 text-gray-200 outline-none w-full rounded-full border-0 bg-[#8879DE] py-4 px-6 mt-5" placeholder="Your Email...">
+                        <textarea type="text" rows="4" class="text-md placeholder:text-gray-200 text-gray-200 outline-none w-full rounded-3xl border-0 bg-[#8879DE] py-4 px-6 mt-5" placeholder="Your Message..."></textarea>
+                        <button class="py-4 px-8 bg-white text-[#7A6AD8] hover:opacity-75 duration-300 text-md font-bold mt-5 rounded-full w-max">Send Message Now</button>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+</div>
+
+
+
+<div class="footer mt-20">
+    <p class="text-center text-white bg-[#7A6AD8] p-10 rounded-tl-3xl rounded-tr-3xl">Copyright © 2036 Scholar Organization. All rights reserved.</p>
+</div>
+
+{% endblock content %}
